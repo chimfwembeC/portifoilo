@@ -31,3 +31,20 @@ body {
     text-wrap: balance;
   }
 }
+
+@import "primereact/resources/themes/saga-blue/theme.css"; /* Light theme */
+@import "primereact/resources/themes/arya-blue/theme.css"; /* Dark theme */
+@import "primereact/resources/primereact.min.css";
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
+
+/* Custom styles */
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: black;
+  color: white;
+}
