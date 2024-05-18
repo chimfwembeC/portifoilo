@@ -1,68 +1,21 @@
 "use client"; // Add this line at the top
 
 import { SpeedDial } from 'primereact/speeddial';
-import React, { useState,useRef } from 'react';
 import Image from 'next/image';
 import RootLayout from './layout';
 import { Button } from 'primereact/button';
-import { Sidebar } from 'primereact/sidebar';
-import { useRouter } from 'next/router';
 import { Toast } from 'primereact/toast';
 import { MenuItem } from 'primereact/menuitem';
-// import "./themeContext";
 
 
 
 const Home: React.FC = () => {
-  const [visible, setVisible] = useState(false);
-
-  const toast = useRef<Toast>(null);
-  // const router = useRouter();
-  const items: MenuItem[] = [
-      {
-          label: 'Add',
-          icon: 'pi pi-pencil',
-          command: () => {
-              toast.current.show({ severity: 'info', summary: 'Add', detail: 'Data Added' });
-          }
-      },
-      {
-          label: 'Update',
-          icon: 'pi pi-refresh',
-          command: () => {
-              toast.current.show({ severity: 'success', summary: 'Update', detail: 'Data Updated' });
-          }
-      },
-      {
-          label: 'Delete',
-          icon: 'pi pi-trash',
-          command: () => {
-              toast.current.show({ severity: 'error', summary: 'Delete', detail: 'Data Deleted' });
-          }
-      },
-      // {
-      //     label: 'Upload',
-      //     icon: 'pi pi-upload',
-      //     command: () => {
-      //         router.push('/fileupload');
-      //     }
-      // },
-      // {
-      //     label: 'React Website',
-      //     icon: 'pi pi-external-link',
-      //     command: () => {
-      //         window.location.href = 'https://react.dev/';
-      //     }
-      // }
-  ];
-
   return (
     <RootLayout>
       <main className="flex min-h-screen flex-col items-center justify-between">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 grid-nogutter p-2 surface-0 text-800">
           <div className="p-6 text-center md:text-left flex align-items-center">
-            <section>
-        <Button icon="pi pi-bars" onClick={() => setVisible(!visible)} />
+            <section>        
               <span className="block text-6xl font-bold mb-1">
                 Create the screens
               </span>
@@ -72,14 +25,8 @@ const Home: React.FC = () => {
               <p className="mt-0 mb-4 text-700 line-height-3">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Sidebar visible={visible} onHide={() => setVisible(!visible)}>
-        <h3>Navigation</h3>
-        <Button label="Home" className="p-button-text" />
-        <Button label="About" className="p-button-text" />
-        <Button label="Portfolio" className="p-button-text" />
-        <Button label="Contact" className="p-button-text" />
-      </Sidebar>
+              </p>              
+       
               <Button
                 label="Learn More"
                 type="button"
@@ -141,13 +88,7 @@ const Home: React.FC = () => {
               </span>
             </div>     
           </div>
-        </div>
-        <div className="card">
-            <div style={{position: "relative",top:0, left:0,width: "100%", height:"100%"}} className="flex z-10 align-items-center justify-content-end">
-                <Toast ref={toast} />
-                <SpeedDial model={items} radius={80} type="circle" buttonClassName="p-button-warning" />
-            </div>
-        </div>
+        </div>     
       </main>     
     </RootLayout>
   );
