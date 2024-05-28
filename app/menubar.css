@@ -1,0 +1,8 @@
+.menubar-fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: "inherit";
+    z-index: 10000;   
+    box-shadow: "0 0 2px 0.5"; 
+}

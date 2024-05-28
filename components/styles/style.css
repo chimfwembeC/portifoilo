@@ -1,0 +1,25 @@
+.github-calender-container {
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    margin: auto;
+    overflow-x: auto;
+}
+
+.github-calender-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .github-calender-container {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .github-calender-container {
+        padding: 10px;
+    }
+}
